@@ -1,0 +1,46 @@
+{% extends 'main.html' %}
+
+{% block title %}  العقارات {% endblock title %}
+
+{% block body %}
+<main id="main">
+ <section id="hero" class="d-flex align-items-center" style="background: url('../../../static/images/background.png'); ">
+    <div class="container" data-aos="zoom-out" data-aos-delay="100">
+      <h2>العقارات</h2>
+    </div>
+  </section>
+<section id="services" class="services">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>العقارات</h2>
+          <h3>نقدم لك <span>كل ما تحتاج معرفته</span></h3>
+          <p></p>
+        </div>
+
+        <div class="row">
+{% for state in states %}
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon-box">
+                <p class="text-black-50"> إسعار تبدأ من</p>
+                <p>{{ state.price }}</p>
+              <div class="card-img"><img src="{{ state.logo.url }}" class="img-fluid"></div>
+              <h4><a href="">{{ state.name }}</a></h4>
+                <hr/>
+                <p>المطور:</p>
+                <h6>{{ state.developer.name }}</h6>
+                <hr/>
+
+            </div>
+          </div>
+
+        {% endfor %}
+
+        </div>
+
+      </div>
+    </section>
+</main>
+
+
+{% endblock body %}

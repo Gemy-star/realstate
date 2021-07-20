@@ -1,0 +1,46 @@
+{% extends 'main.html' %}
+
+{% block title %}  الأسئلة الشائعة {% endblock title %}
+
+
+{% block body %}
+<main id="main">
+  <section id="hero" class="d-flex align-items-center" style="background: url('../../../static/images/hero.png')">
+    <div class="container" data-aos="zoom-out" data-aos-delay="100">
+      <h2>الأسئلة الشائعة</h2>
+    </div>
+  </section>
+
+    <section id="faq" class="faq section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>الأسئلة الشائعة</h2>
+               </div>
+
+        <div class="row justify-content-center">
+          <div class="col-xl-10">
+            <ul class="faq-list">
+  {% for ques in questions %}
+              <li>
+                <div data-bs-toggle="collapse" class="collapsed question" href="#faq1">{{ ques.question }} <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+                <div id="faq1" class="collapse" data-bs-parent=".faq-list">
+                  <p>
+                  {{ ques.answer }}
+                  </p>
+                </div>
+              </li>
+
+{% endfor %}
+
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Frequently Asked Questions Section -->
+
+</main>
+
+
+{% endblock body %}

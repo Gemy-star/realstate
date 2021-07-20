@@ -1,0 +1,84 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block title %}  إتصل بنا {% endblock title %}
+
+
+{% block body %}
+<main id="main">
+
+  <section id="hero" class="d-flex align-items-center" style="background: url('../../../static/images/background.png'); ">
+    <div class="container" data-aos="zoom-out" data-aos-delay="100">
+      <h2>إتصل بنا</h2>
+    </div>
+  </section>
+<section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>اتصل بنا</h2>
+          <h3><span>إتصل بنا</span></h3>
+          <p>سوف تقوم بالرد عليكم فى اسرع وقت</p>
+        </div>
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-6">
+            <div class="info-box mb-4">
+              <i class="bx bx-map"></i>
+              <h3>العنوان</h3>
+              <p>القاهرة , مصر</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="info-box  mb-4">
+              <i class="bx bx-envelope"></i>
+              <h3>البريد الألكترونى</h3>
+              <p>taher@gmail.com</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="info-box  mb-4">
+              <i class="bx bx-phone-call"></i>
+              <h3>هاتف</h3>
+              <p>011111111</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="col-lg-6 ">
+            <iframe class="mb-4 mb-lg-0" src="https://www.google.com/maps/d/embed?mid=1n-v4_hQ062poAWrPdnRdfPoo5l4&msa=0&hl=en&ie=UTF8&t=m&ll=30.37524500000002%2C31.173706000000003&spn=0.710866%2C0.823975&z=9&iwloc=0004e0c9a3ba7aeebea33&output=embed" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
+          </div>
+
+          <div class="col-lg-6">
+            <form method="post" role="form">
+                {% csrf_token %}
+              <div class="row">
+                <div class="col form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="الأسم" required>
+                </div>
+                <div class="col form-group">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="البريد الألكترونى" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="عنوان الرسالة " required>
+              </div>
+              <div class="form-group">
+                <textarea class="form-control" name="message" rows="5" placeholder="موضوع الرسالة" required></textarea>
+              </div>
+              <div class="text-center"><input type="submit" class="btn btn-primary text-white" value="إرسال" /></div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+</main>
+
+
+{% endblock body %}

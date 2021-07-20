@@ -1,0 +1,39 @@
+{% extends 'main.html' %}
+
+{% block title %}  العقارات {% endblock title %}
+
+{% block body %}
+<main id="main">
+ <section id="hero" class="d-flex align-items-center" style="background: url('../../../static/images/hero_3.png'); ">
+    <div class="container" data-aos="zoom-out" data-aos-delay="100">
+      <h2>العقارات</h2>
+    </div>
+  </section>
+<section id="services" class="services">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>العقارات</h2>
+          <h3>نقدم لك <span>كل ما تحتاج معرفته</span></h3>
+          <p></p>
+        </div>
+
+        <div class="row">
+{% for proj in projects %}
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon-box">
+              <div class="card-img"><img src="{{ proj.image.url }}" class="img-fluid"></div>
+              <h4><a href="{% url 'all-state' proj.pk %}">{{ proj.name }}</a></h4>
+            </div>
+          </div>
+
+        {% endfor %}
+
+        </div>
+
+      </div>
+    </section>
+</main>
+
+
+{% endblock body %}

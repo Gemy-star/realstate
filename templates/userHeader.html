@@ -1,0 +1,75 @@
+{% load static %}
+<section class="header" >
+        <div class="container position-sticky z-index-sticky top-0">
+        <div class="row">
+            <div class="col-12">
+                <!-- Navbar -->
+                <nav class="navbar navbar-expand-lg blur blur-rounded top-0 z-index-3 shadow position-absolute my-3 py-2 start-0 end-0 mx-4">
+                    <div class="container-fluid">
+                        <a class="navbar-brand font-weight-bolder ms-lg-0 ms-3 " href="{% url 'home-page' %}">
+                            <img src="{% static 'images/logo.png' %}" class="logo_login" />
+                        </a>
+                        <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon mt-2">
+                                <span class="navbar-toggler-bar bar1"></span>
+                                <span class="navbar-toggler-bar bar2"></span>
+                                <span class="navbar-toggler-bar bar3"></span>
+                            </span>
+                        </button>
+                        <div class="collapse navbar-collapse ps" id="navigation">
+                            <ul class="navbar-nav mx-auto">
+
+                                                                                    <li class="nav-item">
+                                    <a class="nav-link me-2" href="{% url 'home-page' %}">
+                                        <i class="fas fa-home opacity-6 text-dark me-1" aria-hidden="true"></i>
+                                        الرئيسية
+                                    </a>
+                                </li>
+                                                                                 <li class="nav-item">
+                                    <a class="nav-link me-2" href="">
+                                        <i class="far fa-building opacity-6 text-dark me-1" aria-hidden="true"></i>
+                                       عن الشركة
+                                    </a>
+                                </li>
+                                             <li class="nav-item">
+                                    <a class="nav-link me-2" href="#">
+                                        <i class="fas fa-user-tag opacity-6 text-dark me-1" aria-hidden="true"></i>
+                                       الشروط و الأحكام
+                                    </a>
+                                </li>
+                                {% if request.user.first_name %}
+                                                                                      <li class="nav-item">
+                                    <a class="nav-link me-2" href="">
+                                        <i class="fas fa-power-off opacity-6 text-dark me-1" aria-hidden="true"></i>
+                                        تسجيل خروج
+                                    </a>
+                                </li>
+                                                                                           <li class="nav-item">
+                                    <a class="nav-link me-2" href="">
+                                        <i class="far fa-address-card opacity-6 text-dark me-1" aria-hidden="true"></i>
+لوحة التحكم                                    </a>
+                                </li>
+                                {% endif %}
+
+                                                                                                                    <li class="nav-item">
+                                    <a class="nav-link me-2" href="">
+                                        <i class="fas fa-user opacity-6 text-dark me-1" aria-hidden="true"></i>
+                                        حساب أفراد
+                                    </a>
+                                </li>
+
+                            </ul>
+                            <ul class="navbar-nav d-lg-block d-none">
+                                <li class="nav-item">
+                                    <a href="https://maaal.com/" class="btn btn-sm btn-round text-white mb-0 me-1 bg-maal">موقعنا</a>
+                                </li>
+                            </ul>
+                            <div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; right: 0px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div></div>
+                        </div>
+                    </div>
+                </nav>
+                <!-- End Navbar -->
+            </div>
+        </div>
+    </div>
+</section>

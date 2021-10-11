@@ -4,9 +4,8 @@ from .models import FAQ, Contact
 
 
 def home_page(request):
-    location = models.Location.objects.all()
-    developers = models.Developer.objects.all()
-    return render(request, 'main/home.html', context={"locations": location, "devs": developers})
+
+    return render(request, 'main/home.html')
 
 
 def faq_page(request):
@@ -17,6 +16,9 @@ def faq_page(request):
 def about_page(request):
     return render(request, 'main/about.html')
 
+
+def staff_page(request):
+    return render(request, 'main/staff.html')
 
 def contact_page(request):
     if request.method == "POST":

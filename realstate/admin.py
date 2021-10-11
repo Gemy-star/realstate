@@ -1,7 +1,7 @@
 from django.contrib import admin
-from .models import Developer, Location, ProjectState, PayRequest
+from .models import Category, Product, Order, PayRequest
 
-admin.site.register(Developer)
-admin.site.register(Location)
-admin.site.register(ProjectState)
+admin.site.register(Category)
+admin.site.register(Product)
+admin.site.register(Order)
 admin.site.register(PayRequest)

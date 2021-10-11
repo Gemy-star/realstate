@@ -1,46 +1,46 @@
-{% extends 'main.html' %}
-
-{% block title %}  الأسئلة الشائعة {% endblock title %}
-
+{% extends 'masterpage.html' %}
+{% load static %}
+{% block title %}الأسئلة الشائعة{% endblock title %}
 
 {% block body %}
-<main id="main">
-  <section id="hero" class="d-flex align-items-center" style="background: url('../../../static/images/hero.png')">
-    <div class="container" data-aos="zoom-out" data-aos-delay="100">
-      <h2>الأسئلة الشائعة</h2>
-    </div>
-  </section>
-
-    <section id="faq" class="faq section-bg">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>الأسئلة الشائعة</h2>
-               </div>
-
+<section class="min-vh-40 mb-8">
+    <div class="bg-kheer page-header align-items-start min-vh-40 pt-5 pb-11 m-3 border-radius-lg" style="background-image: url('../../../static/images/home7.jpeg');">
+      <div class="container">
         <div class="row justify-content-center">
-          <div class="col-xl-10">
-            <ul class="faq-list">
-  {% for ques in questions %}
-              <li>
-                <div data-bs-toggle="collapse" class="collapsed question" href="#faq1">{{ ques.question }} <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
-                <div id="faq1" class="collapse" data-bs-parent=".faq-list">
-                  <p>
-                  {{ ques.answer }}
-                  </p>
-                </div>
-              </li>
-
-{% endfor %}
-
-            </ul>
+          <div class="col-lg-5 text-center mx-auto">
           </div>
         </div>
-
       </div>
-    </section><!-- End Frequently Asked Questions Section -->
+    </div>
+    <div class="container">
+      <div class="row pt3">
+<div class="col-md-7 mt-4">
+          <div class="card">
+            <div class="card-header pb-0 px-3">
+              <h6 class="mb-0">الأسئلة الشائعة</h6>
+            </div>
+            <div class="card-body pt-4 p-3">
+              <ul class="list-group">
+            {% for fa in questions %}
+                      <li class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg">
+                  <div class="d-flex flex-column">
+                    <h6 class="mb-3 text-sm green-khieer">{{ fa.title }}</h6>
 
-</main>
+                    <span class="text-xs"><span class="text-dark ms-sm-2 blue-khieer font-weight-bold">{{ fa.content }}</span></span>
+                  </div>
+                </li>
+
+                  {% endfor %}
+
+              </ul>
+            </div>
+          </div>
+        </div>
+        </div>
+
+
+    </div>
+  </section>
 
 
 {% endblock body %}

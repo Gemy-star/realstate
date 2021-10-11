@@ -1,84 +1,50 @@
-{% extends 'main.html' %}
+{% extends 'masterpage.html' %}
 {% load static %}
-{% block title %}  إتصل بنا {% endblock title %}
-
+{% block title %}اتصل بنا {% endblock title %}
 
 {% block body %}
-<main id="main">
+<section class="min-vh-85 mb-8">
+    <div class=" bg-kheer page-header align-items-start min-vh-50 pt-5 pb-11 m-3 border-radius-lg" style=" background-image: url('../../../static/images/home4.jpeg');">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-5 text-center mx-auto pt-lg-5">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row mt-lg-n10 mt-md-n11 mt-n10">
+        <div class="col-xl-4 col-lg-5 col-md-7 mx-auto">
+          <div class="card z-index-0">
+            <div class="card-header text-center pt-4">
+              <h5 class="blue-khieer">تواصل معنا</h5>
+            </div>
+            <div class="card-body">
+              <form method="post">
+                  {% csrf_token %}
+                <div class="mb-3">
+                  <input type="text" class="form-control" placeholder="الأسم" name="name" id="name" aria-label="Name" aria-describedby="email-addon">
+                </div>
+                <div class="mb-3">
+                  <input type="email" name="email" id="email" class="form-control" placeholder="البريد الألكترونى" aria-label="address" aria-describedby="email-addon">
+                </div>
+                   <div class="mb-3">
+                  <input type="text" name="subject" id="subject" class="form-control" placeholder="عنوان الرسالة" aria-label="amount" aria-describedby="password-addon">
+                </div>
+                  <div class="mb-3">
+                  <input type="text" name="message" id="message" class="form-control" placeholder="الرسالة" aria-label="amount" aria-describedby="password-addon">
+                </div>
+                <div class="text-center">
+                  <button type="submit" class="btn bg-maal text-white w-100 my-4 mb-2">إرسال</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  <section id="hero" class="d-flex align-items-center" style="background: url('../../../static/images/background.png'); ">
-    <div class="container" data-aos="zoom-out" data-aos-delay="100">
-      <h2>إتصل بنا</h2>
     </div>
   </section>
-<section id="contact" class="contact">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>اتصل بنا</h2>
-          <h3><span>إتصل بنا</span></h3>
-          <p>سوف تقوم بالرد عليكم فى اسرع وقت</p>
-        </div>
-
-        <div class="row" data-aos="fade-up" data-aos-delay="100">
-          <div class="col-lg-6">
-            <div class="info-box mb-4">
-              <i class="bx bx-map"></i>
-              <h3>العنوان</h3>
-              <p>القاهرة , مصر</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <div class="info-box  mb-4">
-              <i class="bx bx-envelope"></i>
-              <h3>البريد الألكترونى</h3>
-              <p>taher@gmail.com</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <div class="info-box  mb-4">
-              <i class="bx bx-phone-call"></i>
-              <h3>هاتف</h3>
-              <p>011111111</p>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="row" data-aos="fade-up" data-aos-delay="100">
-
-          <div class="col-lg-6 ">
-            <iframe class="mb-4 mb-lg-0" src="https://www.google.com/maps/d/embed?mid=1n-v4_hQ062poAWrPdnRdfPoo5l4&msa=0&hl=en&ie=UTF8&t=m&ll=30.37524500000002%2C31.173706000000003&spn=0.710866%2C0.823975&z=9&iwloc=0004e0c9a3ba7aeebea33&output=embed" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
-          </div>
-
-          <div class="col-lg-6">
-            <form method="post" role="form">
-                {% csrf_token %}
-              <div class="row">
-                <div class="col form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="الأسم" required>
-                </div>
-                <div class="col form-group">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="البريد الألكترونى" required>
-                </div>
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="عنوان الرسالة " required>
-              </div>
-              <div class="form-group">
-                <textarea class="form-control" name="message" rows="5" placeholder="موضوع الرسالة" required></textarea>
-              </div>
-              <div class="text-center"><input type="submit" class="btn btn-primary text-white" value="إرسال" /></div>
-            </form>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-</main>
 
 
 {% endblock body %}
